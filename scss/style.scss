@@ -37,111 +37,232 @@ a {
 
 body {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: Montserrat, Verdana, Helvetica, sans-serif;
-}
-
-#main {
   background-image: linear-gradient(
     228.57deg,
     $main-gradient-from 11.93%,
     $main-gradient-from 57.17%,
     $main-gradient-to 87.46%
   );
-  flex-grow: 1;
+  min-height: 100vh;
+  font-family: Montserrat, Verdana, Helvetica, sans-serif;
 }
 
 header {
+  display: grid;
+  grid-template-areas:
+    "contacts contacts contacts"
+    "logo . menu";
+  grid-template-columns: auto 1fr auto;
+
+  @media (min-width: $breakpoint-sm) {
+    grid-template-areas:
+      "contacts"
+      "logo"
+      "menu";
+    grid-template-columns: unset;
+    
+  }
+
+  @media (min-width: $breakpoint-sm) {
+      padding-left:60px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-areas:
+      "logo . contacts"
+      "logo . menu";
+    grid-template-columns: auto 1fr auto;
+      
+   
+  }
+
+  @media (min-width: $breakpoint-md) {
+    padding: 50px 60px 0;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 50px 160px 0;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding: 50px 60px 0;
+  }
+
   
 
-  .contact-info {
+  .contacts {
+    grid-area: contacts;
     justify-content: space-between;
     display: flex;
     align-items: center;
     padding: 10px 15px;
     background-color: rgba($header-bg, 0.2);
-
-  @media (min-width: $breakpoint-sm) {
-    padding: 50px 60px 10px;
-    background-color: transparent;
-  }
+ 
+    @media (min-width: $breakpoint-sm) {
+      padding: 50px 0 30px;
+      background-color: transparent;
+    }
 
     @media (min-width: $breakpoint-sm) {
       justify-content: flex-start;
     }
-  }
-
-  .lang-container__btn {
-    display: inline-flex;
-    width: 33px;
-    height: 25px;
-    align-items: center;
-    justify-content: center;
-    color: $header-link-color;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    background-color: transparent;
-    border: 0;
-
-    &:hover,
-    &:focus {
-      cursor: pointer;
-    }
-  }
-
-  .lang-container__btn_active {
-    background-color: $link-active;
-    border-radius: 8px;
-  }
-
-  .address {
-    display: none;
-
-    @media (min-width: $breakpoint-sm) {
-      display: inline-flex;
-      align-items: center;
-      color: $header-text-dark;
-    }
 
     @media (min-width: $breakpoint-md) {
-      color: $header-text-light;
+      padding: 0;
     }
-  }
 
-  .phone {
-    font-weight: 700;
-    color: $header-link-color;
-  }
 
-  .social-icons {
-    display: none;
-@media (min-width: $breakpoint-sm) {
+
+    .lang-container__btn {
       display: inline-flex;
+      width: 33px;
+      height: 25px;
       align-items: center;
-      color: $header-text-dark;
+      justify-content: center;
+      color: $header-link-color;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      background-color: transparent;
+      border: 0;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+      }
+    }
+
+    .lang-container__btn_active {
+      background-color: $link-active;
+      border-radius: 8px;
+    }
+
+    .address {
+      display: none;
+
+      @media (min-width: $breakpoint-sm) {
+        display: inline-flex;
+        align-items: center;
+        color: $header-text-dark;
+      }
+
+      @media (min-width: $breakpoint-md) {
+        color: $header-text-light;
+      }
+    }
+
+    .phone {
+      font-weight: 700;
+      color: $header-link-color;
+    }
+
+    .social-icons {
+      display: none;
+
+      @media (min-width: $breakpoint-sm) {
+        display: inline-flex;
+        align-items: center;
+        color: $header-text-dark;
+      }
     }
   }
 
+ .logo-container{
+  grid-area: logo;
+ }
 
-  .divider {
-    margin: 0 6px;
+  .logo {
+   
+    display: inline-block;
+    padding-left: 15px;
+    padding-top: 15px;
+
+
+    @media (min-width: $breakpoint-sm) {
+     padding: 0;
+    }
+
+    .logo__image {
+      width: 69px;
+      height: 32px;
+      
+
+      @media (min-width: $breakpoint-sm) {
+        width: 130px;
+        height: 60px;
+        
+       
+      }
+    }
   }
+
+  .menu {
+    grid-area: menu;
+    display: inline-flex;
+    
+
+    @media (min-width: $breakpoint-md) {
+      justify-content: flex-end;
+    }
+    
+
+
+    .menu__icon {
+      display: inline-flex;
+      align-self: center;
+      border: 0;
+      background-color: transparent;
+      margin-right: 15px;
+  
+
+      @media (min-width: $breakpoint-sm) {
+        display: none;
+      }
+    }
+
+    .menu__items {
+      display: none;
+      padding: 0;
+     
+         
+
+      @media (min-width: $breakpoint-sm) {
+        display: flex;
+        margin-top: 30px;
+      }
+
+      @media (min-width: $breakpoint-md) {
+        margin-top: 16px;
+       
+      }
+
+      .menu__item{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: $header-link-color;
+        margin-right: 15px;
+        list-style-type: none;
+
+        &:last-child{
+          @media (min-width: $breakpoint-md) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+
+    
+  }
+
+  
+.divider {
+  margin: 0 6px;
+}
 }
 
-.logo{
-  width: 169px;
-  height: 57px;
-
-  @media (min-width: $breakpoint-sm) {
-    width: 302px;
-    height: 60px;
-  }
-
-}
 
 .divider {
   display: inline-block;
