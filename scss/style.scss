@@ -1,0 +1,155 @@
+@import "variables";
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("../fonts/Montserrat-Regular.woff") format("woff"),
+    url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"),
+    url("../fonts/Montserrat-Bold.woff") format("woff"),
+    url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Montserrat, Verdana, Helvetica, sans-serif;
+}
+
+#main {
+  background-image: linear-gradient(
+    228.57deg,
+    $main-gradient-from 11.93%,
+    $main-gradient-from 57.17%,
+    $main-gradient-to 87.46%
+  );
+  flex-grow: 1;
+}
+
+header {
+  
+
+  .contact-info {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: rgba($header-bg, 0.2);
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 50px 60px 10px;
+    background-color: transparent;
+  }
+
+    @media (min-width: $breakpoint-sm) {
+      justify-content: flex-start;
+    }
+  }
+
+  .lang-container__btn {
+    display: inline-flex;
+    width: 33px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    color: $header-link-color;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 0;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+
+  .lang-container__btn_active {
+    background-color: $link-active;
+    border-radius: 8px;
+  }
+
+  .address {
+    display: none;
+
+    @media (min-width: $breakpoint-sm) {
+      display: inline-flex;
+      align-items: center;
+      color: $header-text-dark;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      color: $header-text-light;
+    }
+  }
+
+  .phone {
+    font-weight: 700;
+    color: $header-link-color;
+  }
+
+  .social-icons {
+    display: none;
+@media (min-width: $breakpoint-sm) {
+      display: inline-flex;
+      align-items: center;
+      color: $header-text-dark;
+    }
+  }
+
+
+  .divider {
+    margin: 0 6px;
+  }
+}
+
+.logo{
+  width: 169px;
+  height: 57px;
+
+  @media (min-width: $breakpoint-sm) {
+    width: 302px;
+    height: 60px;
+  }
+
+}
+
+.divider {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+
+  &.divider_light {
+    background-color: $divider-light;
+  }
+}
