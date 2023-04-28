@@ -25,15 +25,22 @@ a:hover {
 
 body {
   margin: 0;
-  background-image: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
-  min-height: 100vh;
   font-family: Montserrat, Verdana, Helvetica, sans-serif;
+  background-image: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
+}
+
+#main {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 header {
   display: grid;
   grid-template-areas: "contacts contacts contacts" "logo . menu";
   grid-template-columns: auto 1fr auto;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   header {
@@ -59,12 +66,12 @@ header {
 }
 @media (min-width: 1440px) {
   header {
-    padding: 50px 160px 0;
+    padding: 50px 60px 0;
   }
 }
 @media (min-width: 1920px) {
   header {
-    padding: 50px 60px 0;
+    padding: 50px 160px 0;
   }
 }
 header .contacts {
@@ -215,6 +222,77 @@ header .menu .menu__items .menu__item {
 }
 header .divider {
   margin: 0 6px;
+}
+
+.logo-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 600px;
+}
+@media (min-width: 768px) {
+  .logo-bg {
+    height: 1024px;
+  }
+}
+@media (min-width: 1024px) {
+  .logo-bg {
+    height: 768px;
+  }
+}
+@media (min-width: 1440px) {
+  .logo-bg {
+    height: 799px;
+  }
+}
+@media (min-width: 1920px) {
+  .logo-bg {
+    height: 1000px;
+  }
+}
+
+.head-banner .head-banner-text {
+  position: absolute;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 46px;
+  text-align: center;
+  color: #FFFFFF;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -70%, 0);
+}
+@media (min-width: 768px) {
+  .head-banner .head-banner-text {
+    top: 73%;
+    left: 15%;
+    transform: translate(0);
+  }
+}
+@media (min-width: 1024px) {
+  .head-banner .head-banner-text {
+    left: 24%;
+    top: 50%;
+  }
+}
+@media (min-width: 1440px) {
+  .head-banner .head-banner-text {
+    left: 30%;
+    top: 49%;
+  }
+}
+@media (min-width: 1920px) {
+  .head-banner .head-banner-text {
+    left: 39%;
+    top: 32%;
+  }
+}
+.head-banner .head-banner__btn {
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, 0);
 }
 
 .divider {
