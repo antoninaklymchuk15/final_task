@@ -48,8 +48,10 @@ body {
 
 #main {
   position: relative;
-  overflow: hidden;
-  min-height: 100vh;
+  // overflow: hidden;
+  height: 100vh;
+  // background: url(/images/h-symbol-bg.svg) no-repeat;
+  background-position: 50% 0;
 }
 
 header {
@@ -273,45 +275,52 @@ header {
 
 .head-banner {
   position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  align-items: center;
 
   .head-banner-text {
-    position: relative;
+    // position: relative;
     font-weight: 700;
     font-size: 38px;
     line-height: 46px;
     text-align: center;
+    padding: 0 30px;
     color: $header-text-light;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -70%, 0);
+    // top: 50%;
+    // left: 50%;
+    // transform: translate3d(-50%, -70%, 0);
     padding-top: 129px;
 
     @media (min-width: $breakpoint-sm) {
-      top: 73%;
-      left: 15%;
-      transform: translate(0);
+       // top: 73%;
+      // left: 15%;
+      // transform: translate(0);
     }
 
     @media (min-width: $breakpoint-md) {
-      left: 24%;
-      top: 50%;
+      // left: 24%;
+      // top: 50%;
     }
 
     @media (min-width: $breakpoint-lg) {
-      left: 30%;
-      top: 49%;
+      // left: 30%;
+      // top: 49%;
     }
 
     @media (min-width: $breakpoint-xl) {
-      left: 39%;
-      top: 32%;
+      // left: 39%;
+      // top: 32%;
     }
   }
   .head-banner__btn {
-    position: absolute;
-    left: 50%;
-    bottom: 0%;
-    transform: translate(-50%, 0);
+    margin-top: 130px;
+    // position: absolute;
+    // left: 50%;
+    // bottom: 0%;
+    // transform: translate(-50%, 0);
 
     #btn-scroll {
       &:hover {

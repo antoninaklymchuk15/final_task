@@ -31,8 +31,8 @@ body {
 
 #main {
   position: relative;
-  overflow: hidden;
-  min-height: 100vh;
+  height: 100vh;
+  background-position: 50% 0;
 }
 
 header {
@@ -254,49 +254,22 @@ header .divider {
 
 .head-banner {
   position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .head-banner .head-banner-text {
-  position: relative;
   font-weight: 700;
   font-size: 38px;
   line-height: 46px;
   text-align: center;
+  padding: 0 30px;
   color: #FFFFFF;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -70%, 0);
   padding-top: 129px;
 }
-@media (min-width: 768px) {
-  .head-banner .head-banner-text {
-    top: 73%;
-    left: 15%;
-    transform: translate(0);
-  }
-}
-@media (min-width: 1024px) {
-  .head-banner .head-banner-text {
-    left: 24%;
-    top: 50%;
-  }
-}
-@media (min-width: 1440px) {
-  .head-banner .head-banner-text {
-    left: 30%;
-    top: 49%;
-  }
-}
-@media (min-width: 1920px) {
-  .head-banner .head-banner-text {
-    left: 39%;
-    top: 32%;
-  }
-}
 .head-banner .head-banner__btn {
-  position: absolute;
-  left: 50%;
-  bottom: 0%;
-  transform: translate(-50%, 0);
+  margin-top: 130px;
 }
 .head-banner .head-banner__btn #btn-scroll:hover #circle,
 .head-banner .head-banner__btn #btn-scroll:hover #pointer {
